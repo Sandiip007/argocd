@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Products Listing</title>
+    <link rel="stylesheet" href="css/main.css" />
+</head>
+
+<body>
+    <div class="topbar">
+        <div class="container topbar-inner">
+            <div>Free delivery above $75 • New arrivals every week</div>
+            <div class="topbar-links">
+                <a href="#">Track Order</a>
+                <a href="#">Support</a>
+                <a href="#">Gift Cards</a>
+            </div>
+        </div>
+    </div>
+
+    <header class="header">
+        <div class="container header-inner">
+            <div class="logo">
+                <div class="logo-mark">U</div>
+                <span>UrbanCart</span>
+            </div>
+
+            <nav class="nav" aria-label="Main navigation">
+                <a href="#">Home</a>
+                <a href="#">New In</a>
+                <a href="#">Living</a>
+                <a href="#">Fashion</a>
+                <a href="#">Tech</a>
+                <a href="#">Deals</a>
+            </nav>
+
+            <div class="header-actions">
+                <label class="search-box" aria-label="Search products">
+                    <span>⌕</span>
+                    <input id="topSearch" type="search" placeholder="Search products" />
+                </label>
+                <div class="icon-btn" title="Profile">◔</div>
+                <div class="icon-btn" title="Cart">
+                    🛒
+                    <span class="badge">3</span>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="container content-wrap">
+        <aside class="sidebar">
+            <h3>Search & Filters</h3>
+
+            <div class="side-search">
+                <input id="sidebarSearch" type="text" placeholder="Search here" />
+                <span>⌕</span>
+            </div>
+
+            <div class="filter-group">
+                <h4>Category</h4>
+                <div class="checkbox-list">
+                    <label><input type="checkbox" class="filter-checkbox" data-filter="category" value="electronics" />
+                        Electronics</label>
+                    <label><input type="checkbox" class="filter-checkbox" data-filter="category" value="fashion" />
+                        Fashion</label>
+                    <label><input type="checkbox" class="filter-checkbox" data-filter="category" value="home" />
+                        Home</label>
+                    <label><input type="checkbox" class="filter-checkbox" data-filter="category" value="appliances" />
+                        Appliances</label>
+                </div>
+            </div>
+
+            <div class="filter-group">
+                <h4>Price</h4>
+                <div class="price-range">
+                    <input id="priceRange" type="range" min="0" max="20000" step="500" value="20000" />
+                    <div class="price-label">Up to ₹<span id="priceValue">20000</span></div>
+                </div>
+            </div>
+
+            <div class="filter-group">
+                <h4>Brand</h4>
+                <div class="checkbox-list">
+                    <label><input type="checkbox" class="filter-checkbox" data-filter="brand" value="samsung" />
+                        Samsung</label>
+                    <label><input type="checkbox" class="filter-checkbox" data-filter="brand" value="boat" />
+                        Boat</label>
+                    <label><input type="checkbox" class="filter-checkbox" data-filter="brand" value="puma" />
+                        Puma</label>
+                    <label><input type="checkbox" class="filter-checkbox" data-filter="brand" value="philips" />
+                        Philips</label>
+                    <label><input type="checkbox" class="filter-checkbox" data-filter="brand" value="prestige" />
+                        Prestige</label>
+                </div>
+            </div>
+
+            <div class="filter-group">
+                <h4>Customer Rating</h4>
+                <div class="radio-list">
+                    <label><input type="radio" name="rating" value="4" /> 4★ & above</label>
+                    <label><input type="radio" name="rating" value="3" /> 3★ & above</label>
+                    <label><input type="radio" name="rating" value="0" checked /> All Ratings</label>
+                </div>
+            </div>
+
+            <div class="filter-group">
+                <h4>Discount</h4>
+                <div class="checkbox-list">
+                    <label><input type="checkbox" class="filter-checkbox" data-filter="discount" value="30" /> 30%
+                        or more</label>
+                    <label><input type="checkbox" class="filter-checkbox" data-filter="discount" value="50" /> 50%
+                        or more</label>
+                    <label><input type="checkbox" class="filter-checkbox" data-filter="discount" value="70" /> 70%
+                        or more</label>
+                </div>
+            </div>
+
+            <div class="filter-group">
+                <h4>Availability</h4>
+                <div class="radio-list">
+                    <label><input type="radio" name="stock" value="all" checked /> All</label>
+                    <label><input type="radio" name="stock" value="in-stock" /> In Stock</label>
+                    <label><input type="radio" name="stock" value="today" /> Deliver Today</label>
+                </div>
+            </div>
+        </aside>
+
+        <main class="main-panel">
+            <div class="toolbar">
+                <div>
+                    <h2>Products</h2>
+                    <small id="resultCount">Showing 9 items</small>
+                </div>
+
+                <div class="sort-box">
+                    <label for="sortSelect">Sort by:</label>
+                    <select id="sortSelect">
+                        <option value="popular">Popular</option>
+                        <option value="low-high">Price: Low to High</option>
+                        <option value="high-low">Price: High to Low</option>
+                        <option value="rating">Customer Rating</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="product-grid" id="productGrid">
+                <article class="product-card" data-name="boAt Airdopes 131" data-category="electronics"
+                    data-brand="boat" data-price="1499" data-rating="4.4" data-discount="72" data-stock="in-stock">
+                    <div class="product-image-box">
+                        <span class="badge-hot">Hot</span>
+                        <span class="wish">♡</span>
+                        <img src="https://images.unsplash.com/photo-1546435770-a3e426bf472b?auto=format&fit=crop&w=800&q=80"
+                            alt="boAt Airdopes 131" />
+                    </div>
+                    <div class="product-info">
+                        <p class="product-name">boAt Airdopes 131</p>
+                        <div class="meta-row">
+                            <span class="rating">4.4 ★</span>
+                            <span class="reviews">12,445 ratings</span>
+                        </div>
+                        <div class="price-row">
+                            <span class="price">₹1,499</span>
+                            <span class="old-price">₹2,999</span>
+                        </div>
+                        <div class="offer">72% off</div>
+                        <div class="delivery">Free delivery</div>
+                    </div>
+                </article>
+
+                <article class="product-card" data-name="Samsung Galaxy M14" data-category="electronics"
+                    data-brand="samsung" data-price="13999" data-rating="4.3" data-discount="26" data-stock="in-stock">
+                    <div class="product-image-box">
+                        <span class="badge-hot">New</span>
+                        <span class="wish">♡</span>
+                        <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=800&q=80"
+                            alt="Samsung Galaxy M14" />
+                    </div>
+                    <div class="product-info">
+                        <p class="product-name">Samsung Galaxy M14</p>
+                        <div class="meta-row">
+                            <span class="rating">4.3 ★</span>
+                            <span class="reviews">8,400 ratings</span>
+                        </div>
+                        <div class="price-row">
+                            <span class="price">₹13,999</span>
+                            <span class="old-price">₹18,999</span>
+                        </div>
+                        <div class="offer">26% off</div>
+                        <div class="delivery">In stock</div>
+                    </div>
+                </article>
+
+                <article class="product-card" data-name="JBL Flip 5 Speaker" data-category="electronics"
+                    data-brand="jbl" data-price="6999" data-rating="4.5" data-discount="30" data-stock="today">
+                    <div class="product-image-box">
+                        <span class="badge-hot">Top Rated</span>
+                        <span class="wish">♡</span>
+                        <img src="https://images.unsplash.com/photo-1518444065439-e933c06ce9cd?auto=format&fit=crop&w=800&q=80"
+                            alt="JBL Flip 5 Speaker" />
+                    </div>
+                    <div class="product-info">
+                        <p class="product-name">JBL Flip 5 Speaker</p>
+                        <div class="meta-row">
+                            <span class="rating">4.5 ★</span>
+                            <span class="reviews">6,132 ratings</span>
+                        </div>
+                        <div class="price-row">
+                            <span class="price">₹6,999</span>
+                            <span class="old-price">₹9,999</span>
+                        </div>
+                        <div class="offer">30% off</div>
+                        <div class="delivery">Deliver today</div>
+                    </div>
+                </article>
+
+                <article class="product-card" data-name="Puma Running Shoes" data-category="fashion" data-brand="puma"
+                    data-price="2999" data-rating="4.2" data-discount="40" data-stock="in-stock">
+                    <div class="product-image-box">
+                        <span class="badge-hot">Trending</span>
+                        <span class="wish">♡</span>
+                        <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=800&q=80"
+                            alt="Puma Running Shoes" />
+                    </div>
+                    <div class="product-info">
+                        <p class="product-name">Puma Running Shoes</p>
+                        <div class="meta-row">
+                            <span class="rating">4.2 ★</span>
+                            <span class="reviews">5,890 ratings</span>
+                        </div>
+                        <div class="price-row">
+                            <span class="price">₹2,999</span>
+                            <span class="old-price">₹4,999</span>
+                        </div>
+                        <div class="offer">40% off</div>
+                        <div class="delivery">Cash on delivery</div>
+                    </div>
+                </article>
+
+                <article class="product-card" data-name="Prestige Mixer Grinder" data-category="appliances"
+                    data-brand="prestige" data-price="3499" data-rating="4.3" data-discount="34" data-stock="in-stock">
+                    <div class="product-image-box">
+                        <span class="badge-hot">Best Seller</span>
+                        <span class="wish">♡</span>
+                        <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=800&q=80"
+                            alt="Prestige Mixer Grinder" />
+                    </div>
+                    <div class="product-info">
+                        <p class="product-name">Prestige Mixer Grinder</p>
+                        <div class="meta-row">
+                            <span class="rating">4.3 ★</span>
+                            <span class="reviews">3,410 ratings</span>
+                        </div>
+                        <div class="price-row">
+                            <span class="price">₹3,499</span>
+                            <span class="old-price">₹5,299</span>
+                        </div>
+                        <div class="offer">34% off</div>
+                        <div class="delivery">Free delivery</div>
+                    </div>
+                </article>
+
+                <article class="product-card" data-name="Philips Air Fryer" data-category="home" data-brand="philips"
+                    data-price="7999" data-rating="4.4" data-discount="24" data-stock="today">
+                    <div class="product-image-box">
+                        <span class="badge-hot">Limited</span>
+                        <span class="wish">♡</span>
+                        <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=800&q=80"
+                            alt="Philips Air Fryer" />
+                    </div>
+                    <div class="product-info">
+                        <p class="product-name">Philips Air Fryer</p>
+                        <div class="meta-row">
+                            <span class="rating">4.4 ★</span>
+                            <span class="reviews">2,998 ratings</span>
+                        </div>
+                        <div class="price-row">
+                            <span class="price">₹7,999</span>
+                            <span class="old-price">₹10,499</span>
+                        </div>
+                        <div class="offer">24% off</div>
+                        <div class="delivery">Deliver today</div>
+                    </div>
+                </article>
+
+                <article class="product-card" data-name="Noise ColorFit Pro 5" data-category="electronics"
+                    data-brand="noise" data-price="3999" data-rating="4.3" data-discount="38" data-stock="in-stock">
+                    <div class="product-image-box">
+                        <span class="badge-hot">Smart</span>
+                        <span class="wish">♡</span>
+                        <img src="https://images.unsplash.com/photo-1579586337278-3befd40fd17a?auto=format&fit=crop&w=800&q=80"
+                            alt="Noise ColorFit Pro 5" />
+                    </div>
+                    <div class="product-info">
+                        <p class="product-name">Noise ColorFit Pro 5</p>
+                        <div class="meta-row">
+                            <span class="rating">4.3 ★</span>
+                            <span class="reviews">14,510 ratings</span>
+                        </div>
+                        <div class="price-row">
+                            <span class="price">₹3,999</span>
+                            <span class="old-price">₹6,499</span>
+                        </div>
+                        <div class="offer">38% off</div>
+                        <div class="delivery">Free delivery</div>
+                    </div>
+                </article>
+
+                <article class="product-card" data-name="Sparx Casual Sneakers" data-category="fashion"
+                    data-brand="sparx" data-price="2199" data-rating="4.1" data-discount="37" data-stock="in-stock">
+                    <div class="product-image-box">
+                        <span class="badge-hot">Flash</span>
+                        <span class="wish">♡</span>
+                        <img src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?auto=format&fit=crop&w=800&q=80"
+                            alt="Sparx Casual Sneakers" />
+                    </div>
+                    <div class="product-info">
+                        <p class="product-name">Sparx Casual Sneakers</p>
+                        <div class="meta-row">
+                            <span class="rating">4.1 ★</span>
+                            <span class="reviews">2,746 ratings</span>
+                        </div>
+                        <div class="price-row">
+                            <span class="price">₹2,199</span>
+                            <span class="old-price">₹3,499</span>
+                        </div>
+                        <div class="offer">37% off</div>
+                        <div class="delivery">Cash on delivery</div>
+                    </div>
+                </article>
+
+                <article class="product-card" data-name="Wooden Dining Set" data-category="home" data-brand="wooden"
+                    data-price="8999" data-rating="4.5" data-discount="28" data-stock="today">
+                    <div class="product-image-box">
+                        <span class="badge-hot">Top Deal</span>
+                        <span class="wish">♡</span>
+                        <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=800&q=80"
+                            alt="Wooden Dining Set" />
+                    </div>
+                    <div class="product-info">
+                        <p class="product-name">Wooden Dining Set</p>
+                        <div class="meta-row">
+                            <span class="rating">4.5 ★</span>
+                            <span class="reviews">1,909 ratings</span>
+                        </div>
+                        <div class="price-row">
+                            <span class="price">₹8,999</span>
+                            <span class="old-price">₹12,499</span>
+                        </div>
+                        <div class="offer">28% off</div>
+                        <div class="delivery">Deliver today</div>
+                    </div>
+                </article>
+            </div>
+        </main>
+    </div>
+    </div>
+
+    <script>
+        const productCards = [...document.querySelectorAll('.product-card')];
+        const resultCount = document.getElementById('resultCount');
+        const sortSelect = document.getElementById('sortSelect');
+        const topSearch = document.getElementById('topSearch');
+        const sidebarSearch = document.getElementById('sidebarSearch');
+        const priceRange = document.getElementById('priceRange');
+        const priceValue = document.getElementById('priceValue');
+        const filterCheckboxes = [...document.querySelectorAll('.filter-checkbox')];
+        const ratingRadios = [...document.querySelectorAll('input[name="rating"]')];
+        const stockRadios = [...document.querySelectorAll('input[name="stock"]')];
+        const productGrid = document.getElementById('productGrid');
+
+        const selectedFilters = {
+            category: new Set(),
+            brand: new Set(),
+            discount: new Set()
+        };
+
+        function updatePriceText() {
+            priceValue.textContent = Number(priceRange.value).toLocaleString('en-IN');
+        }
+
+        function getSearchValue() {
+            const q = (topSearch.value || sidebarSearch.value || '').trim().toLowerCase();
+            return q;
+        }
+
+        function getSelectedRating() {
+            const checked = ratingRadios.find((r) => r.checked);
+            return checked ? Number(checked.value) : 0;
+        }
+
+        function getSelectedStock() {
+            const checked = stockRadios.find((r) => r.checked);
+            return checked ? checked.value : 'all';
+        }
+
+        function applyFilters() {
+            const searchText = getSearchValue();
+            const maxPrice = Number(priceRange.value);
+            const minRating = getSelectedRating();
+            const stockMode = getSelectedStock();
+
+            let visible = productCards.filter((card) => {
+                const name = card.dataset.name.toLowerCase();
+                const category = card.dataset.category;
+                const brand = card.dataset.brand;
+                const rating = Number(card.dataset.rating);
+                const price = Number(card.dataset.price);
+                const discount = Number(card.dataset.discount);
+                const stock = card.dataset.stock;
+
+                const searchMatch = !searchText || name.includes(searchText) || category.includes(searchText) || brand.includes(searchText);
+
+                const categoryMatch = selectedFilters.category.size === 0 || selectedFilters.category.has(category);
+                const brandMatch = selectedFilters.brand.size === 0 || selectedFilters.brand.has(brand);
+                const discountMatch = selectedFilters.discount.size === 0 || [...selectedFilters.discount].some((d) => discount >= Number(d));
+                const ratingMatch = rating >= minRating;
+                const priceMatch = price <= maxPrice;
+                const stockMatch = stockMode === 'all' || stock === stockMode || (stockMode === 'today' && stock === 'today');
+
+                return searchMatch && categoryMatch && brandMatch && discountMatch && ratingMatch && priceMatch && stockMatch;
+            });
+
+            const sortValue = sortSelect.value;
+            if (sortValue === 'low-high') {
+                visible = [...visible].sort((a, b) => Number(a.dataset.price) - Number(b.dataset.price));
+            } else if (sortValue === 'high-low') {
+                visible = [...visible].sort((a, b) => Number(b.dataset.price) - Number(a.dataset.price));
+            } else if (sortValue === 'rating') {
+                visible = [...visible].sort((a, b) => Number(b.dataset.rating) - Number(a.dataset.rating));
+            }
+
+            productCards.forEach((card) => {
+                const shouldShow = visible.includes(card);
+                card.classList.toggle('hidden', !shouldShow);
+            });
+
+            resultCount.textContent = `Showing ${visible.length} item${visible.length === 1 ? '' : 's'}`;
+
+            visible.forEach((card) => productGrid.appendChild(card));
+        }
+
+        function collectCheckboxValues() {
+            selectedFilters.category.clear();
+            selectedFilters.brand.clear();
+            selectedFilters.discount.clear();
+
+            filterCheckboxes.forEach((box) => {
+                if (box.checked) {
+                    const filterType = box.dataset.filter;
+                    selectedFilters[filterType].add(box.value);
+                }
+            });
+        }
+
+        topSearch.addEventListener('input', applyFilters);
+        sidebarSearch.addEventListener('input', applyFilters);
+        priceRange.addEventListener('input', () => {
+            updatePriceText();
+            applyFilters();
+        });
+
+        filterCheckboxes.forEach((item) => {
+            item.addEventListener('change', () => {
+                collectCheckboxValues();
+                applyFilters();
+            });
+        });
+
+        ratingRadios.forEach((radio) => {
+            radio.addEventListener('change', applyFilters);
+        });
+
+        stockRadios.forEach((radio) => {
+            radio.addEventListener('change', applyFilters);
+        });
+
+        sortSelect.addEventListener('change', applyFilters);
+
+        updatePriceText();
+        collectCheckboxValues();
+        applyFilters();
+    </script>
+</body>
+
+</html>
