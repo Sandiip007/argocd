@@ -1,1 +1,1 @@
-echo "Hi Am hare hear";
+echo "Hi Am hare";
